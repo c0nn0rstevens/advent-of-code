@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "aoc-2023"
+name = "day-1"
 version = "0.1.0"
 description = ""
 authors = ["c0nn0rstevens <72092369+c0nn0rstevens@users.noreply.github.com>"]
