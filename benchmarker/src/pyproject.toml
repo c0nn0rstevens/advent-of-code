@@ -1,0 +1,14 @@
+[tool.poetry]
+name = "benchmarker"
+version = "0.1.0"
+description = "Tool for standardised benchmarking and documentation of results of Advent of Code solutions."
+authors = ["c0nn0rstevens <72092369+c0nn0rstevens@users.noreply.github.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
