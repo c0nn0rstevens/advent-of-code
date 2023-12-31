@@ -1,8 +1,15 @@
+import os
+
+
+script_dir = os.path.dirname(__file__)
+rel_path = "input.txt"
+abs_file_path = os.path.join(script_dir, rel_path)
+
 # List of digits for comparison.
 DIGITS = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
 
 # Read input file and save separate lines into a list.
-with open('input.txt') as f:
+with open(abs_file_path) as f:
     lines = []
     for line in f:
         lines.append(line)
