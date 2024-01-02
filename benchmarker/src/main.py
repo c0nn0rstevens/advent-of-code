@@ -1,7 +1,5 @@
 """
-This module standardises the benchmarking of AoC solutions, records the results
-and automatically generates the Markdown code for documenting the results of a
-given solution.
+Tests performance of AoC solutions and outputs statistics on runtimes.
 """
 
 import sys
@@ -14,7 +12,7 @@ PRECISION = 5
 
 
 def main():
-    """ Runs the benchmark. """
+    """ Runs the benchmark and prints makrdown table with results. """
     testee = sys.argv[1]
     runner = sys.argv[2]
     n = int(sys.argv[3])
@@ -40,7 +38,7 @@ def main():
             "std dev": f'{std_dev:.{PRECISION}}'
         }
     ]
-    md_table = markdown_table(data).set_params(row_sep='markdown').get_markdown()
+    md_table = markdown_table(data).set_params(row_sep='markdown').get_mwrkdown()
     # Get rid of codeblock backticks.
     md_table = md_table[3:-3]
     markdown_template = f"""Date: {today}{md_table}"""
