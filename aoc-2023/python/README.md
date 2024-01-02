@@ -1,8 +1,14 @@
-# Advent of Code 2023 Day 1, Part 1
+# Advent of Code 2023
 
-## Correct Answer: 5631
+## Day 1
 
-### v0.1.0 - First attempt
+### Part 1
+
+***Correct Answer:*** 5631
+
+#### v0.1.0
+
+First attempt.
 
 Date: 02/01/2024
 
