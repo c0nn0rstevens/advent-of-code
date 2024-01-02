@@ -1,5 +1,6 @@
 import os
 
+
 def main():
     script_dir = os.path.dirname(__file__)
     rel_path = "input.txt"
