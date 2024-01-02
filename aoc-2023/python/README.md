@@ -1,10 +1,5 @@
 # Advent of Code 2023
 
-To run benchmark:
-
-```
-poetry run python main.py ../../aoc-2023/python/day-1/part-1.py python 10
-```
 ## Day 1
 
 ### Part 1
