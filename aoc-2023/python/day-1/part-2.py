@@ -21,18 +21,29 @@ def get_calibration_value(line: str, reversed: bool = False) -> int:
     for char in line:
 
         if char in NUMBER_WORDS.values():
-            return int(char)
+
+            try:
+
+                return int(char)
+
+            except ValueError as e:
+                print(f"Cannot convert {char} to int. Error: {e}")
+                return
 
         char_list.insert(0, char) if reversed else char_list.append(char)
 
         if len(char_list) > 2:
-            print(f"{'Second: ' if reversed else 'First: '} \n {char_list}")
+            # print(f"{'Second: ' if reversed else 'First: '} \n {char_list}")
             word = ''.join(map(str, char_list))
             for number_word in NUMBER_WORDS.keys():
                 word_start_index = word.find(number_word)
                 if word_start_index != -1:
-                    return int(NUMBER_WORDS[number_word])
+                    try:
+                        int(NUMBER_WORDS[number_word])
 
+                    except ValueError as e:
+                        print(f"Cannot convert {char} to int. Error: {e}")
+                        return -1
         else:
             continue
 
