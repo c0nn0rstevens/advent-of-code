@@ -13,23 +13,20 @@ NUMBER_WORDS = {
 
 def get_calibration_value(line: str, reversed: bool = False) -> int:
 
+    line = line.rstrip()
     char_list = []
     if reversed:
         line = line[::-1]  # Reverse order of string.
 
     for char in line:
 
-        if char == '\n':
-            continue
+        if char in NUMBER_WORDS.values():
+            return int(char)
 
-        elif char in NUMBER_WORDS.values():
-            char_list.insert(0, char)
-
-        else:
-            char_list.append(char)
+        char_list.insert(0, char) if reversed else char_list.append(char)
 
         if len(char_list) > 2:
-            print(char_list)
+            print(f"{'Second: ' if reversed else 'First: '} \n {char_list}")
             word = ''.join(map(str, char_list))
             for number_word in NUMBER_WORDS.keys():
                 word_start_index = word.find(number_word)
@@ -51,11 +48,12 @@ def main():
     calibration_values = []
 
     for line in lines:
-        calibration_value = (
-            get_calibration_value(line)
-            + get_calibration_value(line, reversed=True)
-        )
-        calibration_values.append(calibration_value)
+        print("Line: " + line)
+        calibration_value_1 = get_calibration_value(line)
+        calibration_value_2 = get_calibration_value(line, reversed=True)
+        print(f"First value: {calibration_value_1}")
+        print(f"Second value: {calibration_value_2}")
+        calibration_values.append(calibration_value_1 + calibration_value_2)
     print(sum(calibration_values))
     return 0
 
