@@ -1,11 +1,3 @@
-
-# List of digits for comparison.
-DIGITS = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9'}
-
-FIRST_LETTERS = {'o', 't', 'f', 's', 'e', 'n'}
-
-LAST_LETTERS = {'e', 'o', 'r', 'x', 'n', 't'}
-
 NUMBER_WORDS = {
     'one': '1',
     'two': '2',
@@ -30,10 +22,7 @@ def get_calibration_value(line: str, reversed: bool = False) -> int:
         if char == '\n':
             continue
 
-        elif char in DIGITS:
-            return int(char)
-
-        elif reversed:
+        elif char in NUMBER_WORDS.values():
             char_list.insert(0, char)
 
         else:
