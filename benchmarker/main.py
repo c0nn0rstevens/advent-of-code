@@ -41,7 +41,7 @@ def main():
     md_table = markdown_table(data).set_params(row_sep='markdown').get_markdown()
     # Get rid of codeblock backticks.
     md_table = md_table[3:-3]
-    markdown_template = f"""Date: {today}{md_table}"""
+    markdown_template = "Date: " + today + "\n" + md_table
     print(markdown_template)
 
 
