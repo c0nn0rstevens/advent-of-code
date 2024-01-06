@@ -60,7 +60,6 @@ def main():
     calibration_values = []
 
     for line in lines:
-        print("Line: " + line)
         calibration_value_1 = get_calibration_value(line)
         calibration_value_2 = get_calibration_value(line, reversed=True)
         calibration_values.append(
